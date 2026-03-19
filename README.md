@@ -383,5 +383,4 @@ npm run dev
 open http://localhost:5173
 ```
 
-That's it. Happy writing. ✍️
 6b5b446 (Initial commit)
