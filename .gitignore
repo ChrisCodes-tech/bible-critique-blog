@@ -1,0 +1,32 @@
+# --- Python / Django ---
+__pycache__/
+*.py[cod]
+*$py.class
+.env
+db.sqlite3
+media/
+staticfiles/
+venv/
+env/
+
+# --- Node / React / Vite ---
+node_modules/
+dist/
+dist-ssr/
+*.local
+.eslintcache
+package-lock.json
+yarn.lock
+
+# --- TypeScript ---
+*.tsbuildinfo
+
+# --- Android / Termux / Editors ---
+.termux/
+.thumbnails/
+.DS_Store
+*.swp
+.vscode/
+.idea/
+.acode/
+

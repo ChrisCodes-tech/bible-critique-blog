@@ -1,0 +1,77 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #0C0B09;
+  --color-ink-soft: #1A1916;
+  --color-ink-muted: #2E2C28;
+
+  --color-parchment: #F2EDE4;
+  --color-parchment-soft: #E8E1D5;
+  --color-parchment-muted: #C9BFB0;
+
+  --color-amber-blog: #C8833A;
+  --color-amber-light: #E09E57;
+  --color-amber-dark: #A06828;
+
+  --color-crimson-blog: #8B2020;
+  --color-crimson-light: #B03030;
+
+  --font-display: "Cormorant Garamond", Georgia, serif;
+  --font-serif: "Crimson Text", Georgia, serif;
+  --font-mono: "JetBrains Mono", monospace;
+  --font-sans: "DM Sans", system-ui, sans-serif;
+
+  --animate-fade-in: fadeIn 0.5s ease forwards;
+  --animate-slide-up: slideUp 0.4s ease forwards;
+  --animate-shimmer: shimmer 1.5s infinite;
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  @keyframes slideUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+  }
+}
+
+@layer base {
+  * { @apply box-border; }
+  html { scroll-behavior: smooth; }
+  body {
+    @apply bg-ink text-parchment font-serif antialiased;
+    font-size: 18px;
+    line-height: 1.7;
+  }
+  ::selection {
+    background-color: var(--color-amber-blog);
+    color: var(--color-ink);
+  }
+}
+
+@layer components {
+  .skeleton {
+    @apply bg-ink-muted rounded animate-shimmer;
+    background: linear-gradient(
+      90deg,
+      var(--color-ink-muted) 25%,
+      var(--color-ink-soft) 50%,
+      var(--color-ink-muted) 75%
+    );
+    background-size: 200% 100%;
+  }
+
+  .divider-amber {
+    @apply border-amber-blog/30;
+  }
+
+  .post-body {
+    @apply font-serif text-parchment-soft leading-relaxed;
+  }
+  
+  /* ... rest of your post-body styles ... */
+}
